@@ -1,5 +1,5 @@
 from concurrent import futures
-import logging
+import logging, time
 
 import grpc
 import proto_pb2
@@ -9,7 +9,10 @@ import proto_pb2_grpc
 class Greeter(proto_pb2_grpc.GreeterServicer):
 
     def SayHello(self, request, context):
-        return proto_pb2.HelloReply(message='Hello, %s!' % request.name)
+        tic = time.time()
+        time.sleep(2)
+        toc = time.time()
+        return proto_pb2.HelloReply(message=f'{toc-tic}')
     def SayHelloAgain(self, request, context):
         return proto_pb2.HelloReply(message=f'Hello again, {request.name}!')
 

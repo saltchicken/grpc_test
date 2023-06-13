@@ -8,8 +8,8 @@ import proto_pb2_grpc
 
 
 def run():
-    # with grpc.insecure_channel('192.168.1.45:50051') as channel:
-    with grpc.insecure_channel('127.0.0.1:50051') as channel:
+    with grpc.insecure_channel('192.168.1.5:50051') as channel:
+    # with grpc.insecure_channel('127.0.0.1:50051') as channel:
         stub = proto_pb2_grpc.GreeterStub(channel)
         response = stub.SayHello(proto_pb2.HelloRequest(name='you'))
         print(response.message)
