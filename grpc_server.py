@@ -21,15 +21,15 @@ def serve():
     port = '50051'
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     proto_pb2_grpc.add_GreeterServicer_to_server(Greeter(), server)
-    with open('private.key', 'rb') as f:
+    with open('../private.key', 'rb') as f:
         private_key = f.read()
 
     # Load the server's certificate chain
-    with open('certificate.pem', 'rb') as f:
+    with open('../certificate.pem', 'rb') as f:
         certificate_chain = f.read()
 
     # Load the client's root certificates
-    with open('csr.pem', 'rb') as f:
+    with open('../csr.pem', 'rb') as f:
         root_certificates = f.read()
     server_credentials = grpc.ssl_server_credentials(
     [(private_key, certificate_chain)],
