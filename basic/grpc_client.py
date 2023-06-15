@@ -8,7 +8,7 @@ import proto_pb2_grpc
 
 
 def run():
-    with open('../../roots.pem', 'rb') as f:
+    with open('../roots.pem', 'rb') as f:
         creds = grpc.ssl_channel_credentials(f.read())
     with grpc.secure_channel('192.168.1.100:50051', creds) as channel:
     # with grpc.insecure_channel('192.168.1.5:50051') as channel:
