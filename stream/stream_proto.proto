@@ -5,7 +5,7 @@ syntax = "proto3";
 option java_package = "ex.grpc";
 option objc_class_prefix = "HSW";
 
-package hellostreamingworld;
+package stream_proto;
 
 // The greeting service definition.
 service MultiGreeter {
