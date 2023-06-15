@@ -17,8 +17,8 @@ import asyncio
 import logging
 
 import grpc
-import hellostreamingworld_pb2
-import hellostreamingworld_pb2_grpc
+import stream_proto_pb2
+import stream_proto_pb2_grpc
 
 
 async def run() -> None:

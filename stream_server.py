@@ -17,10 +17,10 @@ import asyncio
 import logging
 
 import grpc
-from hellostreamingworld_pb2 import HelloReply
-from hellostreamingworld_pb2 import HelloRequest
-from hellostreamingworld_pb2_grpc import MultiGreeterServicer
-from hellostreamingworld_pb2_grpc import add_MultiGreeterServicer_to_server
+from stream_proto_pb2 import HelloReply
+from stream_proto_pb2 import HelloRequest
+from stream_proto_pb2_grpc import MultiGreeterServicer
+from stream_proto_pb2_grpc import add_MultiGreeterServicer_to_server
 
 NUMBER_OF_REPLY = 10
 
